@@ -79,8 +79,8 @@ function App() {
             </div>
 
             <hr />
-            <p>Total: {calculate(quantityHours)}</p>
-            <p>Total Horas extras: {calculate(quantityHoursExtra)}</p>
+            <p>Total trabalhado: {calculate(quantityHours)}</p>
+            <p>Total horas extras: {calculate(quantityHoursExtra)}</p>
           </Card.Body>
         </Card>
       </Container>

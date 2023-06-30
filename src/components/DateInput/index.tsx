@@ -59,16 +59,18 @@ const DateInput = ({
     if (!totalHours) {
       setTotal('');
     }
-
-    setAllHours(totalHours.toString());
     setTotal(totalHours.toString());
 
     const extra = calculateDiffBetween('08:00', totalHours);
+    let hours = totalHours.toString();
 
     if (extra) {
       setTotalHoursExtra(extra);
       setTotalExtra(extra);
+      hours = '08:00';
     }
+
+    setAllHours(hours);
   }, [
     initHour,
     endHour,
