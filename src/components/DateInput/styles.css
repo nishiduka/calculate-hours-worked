@@ -1,0 +1,33 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.grid:nth-child(2n) {
+  background-color: #dedede;
+} 
+
+.total-hours {
+  text-align: center;
+  grid-column: 1 / span 2;
+}
+
+.total-hours-extra {
+  text-align: center;
+  grid-column: 3 / span 2;
+}
+
+@media screen and (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(6, calc(100% / 6));
+  }
+
+  .total-hours{
+    grid-column: initial;
+  }
+  .total-hours-extra {
+    grid-column: initial;
+  }
+}
