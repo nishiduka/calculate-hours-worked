@@ -93,7 +93,12 @@ function App() {
               </div>
 
               {fields.map((field, index) => (
-                <DateInput key={field.id} index={index} />
+                <DateInput
+                  key={field.id}
+                  index={index}
+                  addRowSum={addRowSum}
+                  isLast={fields.length === index + 1}
+                />
               ))}
 
               <hr />

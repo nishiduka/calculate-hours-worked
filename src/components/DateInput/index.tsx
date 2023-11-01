@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useFormContext } from 'react-hook-form';
 import moment from 'moment';
+import { Button } from 'react-bootstrap';
 
 import './styles.css';
 import InputMasked from '../InputMasked';
@@ -8,8 +9,10 @@ import { calculateHours } from '../../utils/dates';
 
 type TDateInput = {
   index: number;
+  addRowSum: () => void;
+  isLast: boolean;
 };
-const DateInput = ({ index }: TDateInput) => {
+const DateInput = ({ index, addRowSum, isLast }: TDateInput) => {
   const { watch, setValue } = useFormContext();
 
   const quantityHours = watch(`quantityHoursPerDay`);
@@ -75,6 +78,8 @@ const DateInput = ({ index }: TDateInput) => {
 
       <p className={`total-hours ${hoursAtDay}`}>{total}</p>
       <p className="total-hours-extra">{totalExtra}</p>
+
+      {isLast && <Button onClick={addRowSum}>adicionar</Button>}
     </div>
   );
 };
